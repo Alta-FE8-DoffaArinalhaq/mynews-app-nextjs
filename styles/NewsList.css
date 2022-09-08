@@ -1,0 +1,25 @@
+.containerCard {
+  margin: 10px 20px 50px 20px;
+  width: 230px;
+  height: 300px;
+}
+
+.card {
+  height: 5000px;
+}
+
+.image {
+  height: 200px;
+}
+
+
+.title {
+  text-decoration: none;
+  color: black;
+  height: 0px;
+}
+
+/* .btn {
+  margin-top: 15px;
+  width: 5000px;
+} */
