@@ -1,8 +1,9 @@
 import axios from 'axios';
 import React, { useEffect } from 'react';
-import { Image } from 'react-bootstrap';
+import { Button, Image } from 'react-bootstrap';
 import NavBar from '../components/Navbar';
 import NewsList from '../components/NewsList';
+import Router, { useRouter } from 'next/router';
 
 export const getServerSideProps = async () => {
   const response = await axios.get(`https://inshorts.deta.dev/news?category=startup`);
@@ -15,16 +16,31 @@ export const getServerSideProps = async () => {
 };
 
 const Index = ({ newsData }) => {
-  console.log('date time: ', newsData);
+  const router = useRouter();
+
+  const pageDetail = (item) => {
+    Router.push({
+      pathname: `/detail`,
+      query: {
+        imageUrl: item.imageUrl,
+        title: item.title,
+        content: item.content,
+        date: item.date,
+        author: item.author,
+        time: item.time,
+      },
+    });
+  };
+
   return (
     <div>
       <NavBar />
       <h1>Head News</h1>
-      <div className='container'>
+      <div className="container">
         {newsData.map((item, index) => {
           return (
             <div key={index}>
-              <NewsList src={item.imageUrl} title={item.title} />
+              <NewsList src={item.imageUrl} title={item.title} clickDetail={() => pageDetail(item)} />
             </div>
           );
         })}

@@ -1,7 +1,7 @@
 import { Navbar, Container, Nav } from 'react-bootstrap';
 import Router from 'next/router';
 
-const NavBar = (props) => {
+const NavBar = () => {
   const homePage = () => {
     Router.push({
       pathname: '/',
