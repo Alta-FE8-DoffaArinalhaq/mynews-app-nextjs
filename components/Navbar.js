@@ -12,7 +12,7 @@ const NavBar = () => {
     <div>
       <Navbar bg="dark" variant="dark">
         <Container>
-          <Navbar.Brand className="navbrand">INDIA'S STARTUP</Navbar.Brand>
+          <Navbar.Brand className="navbrand">INDIAS STARTUP</Navbar.Brand>
           <Nav className="me-auto ">
             <Nav.Link className="home" onClick={() => homePage()}>
               Home
